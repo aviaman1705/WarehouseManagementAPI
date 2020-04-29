@@ -1,0 +1,72 @@
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.deps.json
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.runtimeconfig.json
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.runtimeconfig.dev.json
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.dll
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csprojAssemblyReference.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CoreCompileInputs.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cs
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfoInputs.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfo.cs
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorTargetAssemblyInfo.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.pdb
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.dll
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.pdb
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.dll
+C:\Angular\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.TagHelpers.input.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.TagHelpers.output.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorCoreGenerate.cache
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorTargetAssemblyInfo.cs
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
+C:\Angular\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CopyComplete
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.deps.json
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.runtimeconfig.json
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.runtimeconfig.dev.json
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.dll
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.pdb
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.dll
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CoreCompileInputs.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cs
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfoInputs.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfo.cs
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.TagHelpers.input.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.TagHelpers.output.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorCoreGenerate.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorTargetAssemblyInfo.cache
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorTargetAssemblyInfo.cs
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.dll
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.pdb
+C:\Users\aviam\Downloads\06.10. Prevent XSRF (Cross Site Request Forgery)\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CopyComplete
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\nlog.config
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\appsettings.json
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.deps.json
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.runtimeconfig.json
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.runtimeconfig.dev.json
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.dll
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.pdb
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.dll
+C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CoreCompileInputs.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cs
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfoInputs.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfo.cs
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.TagHelpers.input.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.TagHelpers.output.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorCoreGenerate.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorTargetAssemblyInfo.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorTargetAssemblyInfo.cs
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.dll
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.pdb
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.genruntimeconfig.cache
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CopyComplete
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csprojAssemblyReference.cache
