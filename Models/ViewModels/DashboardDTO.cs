@@ -8,5 +8,6 @@ namespace MvcTaskManager.Models.ViewModels
     public class DashboardDTO
     {
         public int ProductsCount { get; set; }
+        public int LocationsCount { get; set; }
     }
 }

@@ -130,7 +130,7 @@ namespace MvcTaskManager
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
                 //Create Admin Role
-                if (!(await roleManager.RoleExistsAsync("Admin")))
+                if (!await roleManager.RoleExistsAsync("Admin"))
                 {
                     var role = new ApplicationRole();
                     role.Name = "Admin";

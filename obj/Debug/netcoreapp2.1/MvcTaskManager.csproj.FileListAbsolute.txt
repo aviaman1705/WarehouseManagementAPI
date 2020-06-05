@@ -53,7 +53,6 @@ C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.dll
 C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.pdb
 C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.dll
 C:\www\MvcTaskManager\MvcTaskManager\bin\Debug\netcoreapp2.1\MvcTaskManager.Views.pdb
-C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CoreCompileInputs.cache
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cache
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.RazorAssemblyInfo.cs
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.AssemblyInfoInputs.cache
@@ -69,4 +68,5 @@ C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.dll
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.pdb
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.genruntimeconfig.cache
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CopyComplete
+C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CoreCompileInputs.cache
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csprojAssemblyReference.cache

@@ -7,6 +7,8 @@ using MvcTaskManager.Identity;
 using MvcTaskManager.Models;
 using MvcTaskManager.Models.ViewModels;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace MvcTaskManager.Controllers
 {
@@ -15,10 +17,15 @@ namespace MvcTaskManager.Controllers
     {
         private ApplicationDbContext _db;
         private readonly IMapper _mapper;
-        public ProductsController(ApplicationDbContext db, IMapper mapper)
+        private readonly ILogger<ProductsController> _logger;
+        public ProductsController(
+            ApplicationDbContext db,
+            IMapper mapper,
+            ILogger<ProductsController> logger)
         {
             _db = db;
             _mapper = mapper;
+            _logger = logger;
         }
 
 
@@ -26,8 +33,17 @@ namespace MvcTaskManager.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Get()
         {
-            List<ProductDTO> productsDTO = _mapper.Map<List<ProductDTO>>(_db.Products.ToList());
-            return Ok(productsDTO);
+            try
+            {
+                List<ProductDTO> productsDTO = _mapper.Map<List<ProductDTO>>(_db.Products.ToList());
+                _logger.LogInformation($"{Environment.NewLine} Get");
+                return Ok(productsDTO);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
+            }
         }
 
 
@@ -35,15 +51,24 @@ namespace MvcTaskManager.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Get(int id)
         {
-            ProductDTO productDTO = _mapper.Map<ProductDTO>(_db.Products.Where(temp => temp.Id == id).FirstOrDefault());
+            try
+            {
+                ProductDTO productDTO = _mapper.Map<ProductDTO>(_db.Products.Where(temp => temp.Id == id).FirstOrDefault());
+                _logger.LogInformation($"{Environment.NewLine} Get {id}");
 
-            if (productDTO != null)
-            {
-                return Ok(productDTO);
+                if (productDTO != null)
+                {
+                    return Ok(productDTO);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound();
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
 
@@ -53,22 +78,30 @@ namespace MvcTaskManager.Controllers
         //[ValidateAntiForgeryToken]
         public IActionResult Post([FromBody] Product product)
         {
-
-            Product productAllreadyExsist = _db.Products.FirstOrDefault(p => p.Title == product.Title && p.Code == product.Code);
-
-            if (productAllreadyExsist != null)
+            try
             {
-                productAllreadyExsist.Count += product.Count;
-                _db.SaveChanges();
-                return Ok(productAllreadyExsist);
+                Product productAllreadyExsist = _db.Products.FirstOrDefault(p => p.Title == product.Title && p.Code == product.Code);
+                _logger.LogInformation($"{Environment.NewLine} Post {product}");
+
+                if (productAllreadyExsist != null)
+                {
+                    productAllreadyExsist.Count += product.Count;
+                    _db.SaveChanges();
+                    return Ok(productAllreadyExsist);
+                }
+                else
+                {
+                    _db.Products.Add(product);
+                    _db.SaveChanges();
+
+                    ProductDTO productDTO = _mapper.Map<ProductDTO>(_db.Products.Where(temp => temp.Id == product.Id).FirstOrDefault());
+                    return Ok(productDTO);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                _db.Products.Add(product);
-                _db.SaveChanges();
-
-                ProductDTO productDTO = _mapper.Map<ProductDTO>(_db.Products.Where(temp => temp.Id == product.Id).FirstOrDefault());
-                return Ok(productDTO);
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
 
@@ -78,21 +111,31 @@ namespace MvcTaskManager.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Put([FromBody] Product product)
         {
-            Product existingProduct = _db.Products.Where(temp => temp.Id == product.Id).FirstOrDefault();
-            if (existingProduct != null)
+            try
             {
-                existingProduct.Code = product.Code;
-                existingProduct.Count = product.Count;
-                existingProduct.Title = product.Title;
+                Product existingProduct = _db.Products.Where(temp => temp.Id == product.Id).FirstOrDefault();
+                _logger.LogInformation($"{Environment.NewLine} Put {product}");
 
-                _db.SaveChanges();
+                if (existingProduct != null)
+                {
+                    existingProduct.Code = product.Code;
+                    existingProduct.Count = product.Count;
+                    existingProduct.Title = product.Title;
 
-                ProductDTO existingProjectDTO = _mapper.Map<ProductDTO>(existingProduct);
-                return Ok(existingProjectDTO);
+                    _db.SaveChanges();
+
+                    ProductDTO existingProjectDTO = _mapper.Map<ProductDTO>(existingProduct);
+                    return Ok(existingProjectDTO);
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return null;
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
 
@@ -102,43 +145,62 @@ namespace MvcTaskManager.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public int Delete(int id)
         {
-            Product existingProduct = _db.Products.Where(temp => temp.Id == id).FirstOrDefault();
-            if (existingProduct != null)
+            try
             {
-                _db.Products.Remove(existingProduct);
-                _db.SaveChanges();
-                return id;
+                Product existingProduct = _db.Products.Where(temp => temp.Id == id).FirstOrDefault();
+                _logger.LogInformation($"{Environment.NewLine} Delete {id}");
+
+                if (existingProduct != null)
+                {
+                    _db.Products.Remove(existingProduct);
+                    _db.SaveChanges();
+                    return id;
+                }
+                else
+                {
+                    return -1;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return -1;
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
         // GET api/product/title/value
         [HttpGet("{type}/{value}")]
         public int Search(string type, string value)
         {
+            try
+            {
+                _logger.LogInformation($"{Environment.NewLine} Search {type}/{value}");
 
-            if (type == "title")
-            {
-                bool titleExsist = _db.Products.Any(x => x.Title.StartsWith(value));
-                if (titleExsist)
+                if (type == "title")
                 {
-                    return -1;
+                    bool titleExsist = _db.Products.Any(x => x.Title.StartsWith(value));
+                    if (titleExsist)
+                    {
+                        return -1;
+                    }
+                    return 1;
                 }
-                return 1;
-            }
-            else if (type == "code")
-            {
-                bool titleExsist = _db.Products.Any(x => x.Code.StartsWith(value));
-                if (titleExsist)
+                else if (type == "code")
                 {
-                    return -1;
+                    bool titleExsist = _db.Products.Any(x => x.Code.StartsWith(value));
+                    if (titleExsist)
+                    {
+                        return -1;
+                    }
+                    return 1;
                 }
-                return 1;
+                else
+                    return 1;
             }
-            else
-                return 1;
+            catch (Exception ex)
+            {
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
+            }
         }
     }
 }

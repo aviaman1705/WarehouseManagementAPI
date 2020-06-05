@@ -19,6 +19,7 @@ namespace MvcTaskManager.Identity
         public DbSet<Location> Locations { get; set; }
         public DbSet<ApplicationRole> ApplicationRoles { get; set; }
         public DbSet<ProductInLocation> ProductsInLocations { get; set; }
+        public DbSet<Log> Logs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

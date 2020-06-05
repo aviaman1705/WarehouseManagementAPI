@@ -7,6 +7,8 @@ using MvcTaskManager.Identity;
 using MvcTaskManager.Models;
 using MvcTaskManager.Models.ViewModels;
 using AutoMapper;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace MvcTaskManager.Controllers
 {
@@ -15,18 +17,32 @@ namespace MvcTaskManager.Controllers
     {
         private ApplicationDbContext _db;
         private readonly IMapper _mapper;
-        public LocationsController(ApplicationDbContext db, IMapper mapper)
+        private readonly ILogger<ProductsController> _logger;
+        public LocationsController(
+            ApplicationDbContext db,
+            IMapper mapper,
+            ILogger<ProductsController> logger)
         {
             _db = db;
             _mapper = mapper;
+            _logger = logger;
         }
 
         [HttpGet]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Get()
         {
-            List<LocationDTO> LocationsDTO = _mapper.Map<List<LocationDTO>>(_db.Locations.ToList());
-            return Ok(LocationsDTO);
+            try
+            {
+                List<LocationDTO> LocationsDTO = _mapper.Map<List<LocationDTO>>(_db.Locations.ToList());
+                _logger.LogInformation($"{Environment.NewLine} Get");
+                return Ok(LocationsDTO);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
+            }
         }
 
 
@@ -34,15 +50,24 @@ namespace MvcTaskManager.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Get(int id)
         {
-            LocationDTO LocationDTO = _mapper.Map<LocationDTO>(_db.Locations.Where(temp => temp.Id == id).FirstOrDefault());
+            try
+            {
+                LocationDTO LocationDTO = _mapper.Map<LocationDTO>(_db.Locations.Where(temp => temp.Id == id).FirstOrDefault());
+                _logger.LogInformation($"{Environment.NewLine} Get {id}");
 
-            if (LocationDTO != null)
-            {
-                return Ok(LocationDTO);
+                if (LocationDTO != null)
+                {
+                    return Ok(LocationDTO);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return NotFound();
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
 
@@ -50,19 +75,29 @@ namespace MvcTaskManager.Controllers
         [HttpPost]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public IActionResult Post([FromBody] Location Location)
+        public IActionResult Post([FromBody] Location location)
         {
-            Location LocationAllreadyExsist = _db.Locations.FirstOrDefault(p => p.Place == Location.Place);
-            if (LocationAllreadyExsist != null)
+            try
             {
-                return BadRequest(new { error = "אייטם כבר קיים" });
+                Location LocationAllreadyExsist = _db.Locations.FirstOrDefault(p => p.Place == location.Place);
+                _logger.LogInformation($"{Environment.NewLine} Post {location}");
+
+                if (LocationAllreadyExsist != null)
+                {
+                    return BadRequest(new { error = "אייטם כבר קיים" });
+                }
+                else
+                {
+                    _db.Locations.Add(location);
+                    _db.SaveChanges();
+                    LocationDTO LocationDTO = _mapper.Map<LocationDTO>(_db.Locations.Where(temp => temp.Id == location.Id).FirstOrDefault());
+                    return Ok(LocationDTO);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                _db.Locations.Add(Location);
-                _db.SaveChanges();
-                LocationDTO LocationDTO = _mapper.Map<LocationDTO>(_db.Locations.Where(temp => temp.Id == Location.Id).FirstOrDefault());
-                return Ok(LocationDTO);
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
 
@@ -70,20 +105,30 @@ namespace MvcTaskManager.Controllers
         [HttpPut()]
         [Route("UpdateLocationDetails")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public IActionResult Put([FromBody] Location Location)
+        public IActionResult Put([FromBody] Location location)
         {
-            Location existingLocation = _db.Locations.Where(temp => temp.Id == Location.Id).FirstOrDefault();
-            if (existingLocation != null)
+            try
             {
-                existingLocation.Place = Location.Place;
-                _db.SaveChanges();
+                Location existingLocation = _db.Locations.Where(temp => temp.Id == location.Id).FirstOrDefault();
+                _logger.LogInformation($"{Environment.NewLine} Put {location}");
 
-                LocationDTO existingLocationDTO = _mapper.Map<LocationDTO>(existingLocation);
-                return Ok(existingLocationDTO);
+                if (existingLocation != null)
+                {
+                    existingLocation.Place = location.Place;
+                    _db.SaveChanges();
+
+                    LocationDTO existingLocationDTO = _mapper.Map<LocationDTO>(existingLocation);
+                    return Ok(existingLocationDTO);
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return null;
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
 
@@ -93,28 +138,48 @@ namespace MvcTaskManager.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public int Delete(int id)
         {
-            Location existingLocation = _db.Locations.Where(temp => temp.Id == id).FirstOrDefault();
-            if (existingLocation != null)
+            try
             {
-                _db.Locations.Remove(existingLocation);
-                _db.SaveChanges();
-                return id;
+                Location existingLocation = _db.Locations.Where(temp => temp.Id == id).FirstOrDefault();
+                _logger.LogInformation($"{Environment.NewLine} Delete {id}");
+
+                if (existingLocation != null)
+                {
+                    _db.Locations.Remove(existingLocation);
+                    _db.SaveChanges();
+                    return id;
+                }
+                else
+                {
+                    return -1;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return -1;
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
             }
         }
         // GET api/Location/location
         [HttpGet("search/{place}")]
         public int Search(string place)
         {
-            bool locationExsist = _db.Locations.Any(x => x.Place.StartsWith(place));
-            if (locationExsist)
+            try
             {
-                return -1;
+                bool locationExsist = _db.Locations.Any(x => x.Place.StartsWith(place));
+                _logger.LogInformation($"{Environment.NewLine} Search {place}");
+
+                if (locationExsist)
+                {
+                    return -1;
+                }
+                return 1;
             }
-            return 1;
+            catch (Exception ex)
+            {
+                _logger.LogError($"{Environment.NewLine} {ex.Message}");
+                throw;
+            }
         }
     }
 }
