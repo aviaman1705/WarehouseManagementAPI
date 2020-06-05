@@ -69,4 +69,3 @@ C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.pdb
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.genruntimeconfig.cache
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CopyComplete
 C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csproj.CoreCompileInputs.cache
-C:\www\MvcTaskManager\MvcTaskManager\obj\Debug\netcoreapp2.1\MvcTaskManager.csprojAssemblyReference.cache

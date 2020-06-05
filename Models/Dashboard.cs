@@ -14,8 +14,10 @@ namespace MvcTaskManager.Models
         {
             this.db = db;
             this.ProductsCount = db.Products.Count();
+            this.LocationsCount = db.Locations.Count();
         }
 
         public int ProductsCount { get; set; }
+        public int LocationsCount { get; set; }
     }
 }
